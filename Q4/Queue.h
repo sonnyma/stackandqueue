@@ -4,15 +4,15 @@
  * Description: Implementation of an int sequence with enqueue/dequeue ...
  * Class Invariant: ... in FIFO order
  *
- * Author:
- * Date:
+ * Author: Sonny Ma
+ * Date: Feb 17 2022
  */
   
 class Queue {
 	
     private:
         static unsigned const INITIAL_CAPACITY = 6; // Constant INITIAL_CAPACITY
-        int elements[INITIAL_CAPACITY];             // To do: replace this by int * elements -> Question 4.a)
+        int * elements;             // To do: replace this by int * elements -> Question 4.a)
 
         unsigned elementCount;                      // Number of elements in the Queue
         unsigned capacity;                          // Actual capacity of the data structure (number of cells in the array)
@@ -22,6 +22,10 @@ class Queue {
     public:
         // Description:  Constructor
         Queue();
+
+
+        // Description:  Destrocutor
+        ~Queue();
 
 
         // Description:  Inserts element x at the back (O(1))
@@ -40,6 +44,7 @@ class Queue {
 
         // Description:  Returns true if and only if queue empty (O(1))
         bool isEmpty() const;
+
 };
 
 
