@@ -33,23 +33,19 @@ Stack::~Stack()
 // Postcondition: If stack is empty, makes head and tail the input. Otherwise, find tail, link the tail to the input, and reset tail
 void Stack::push(int x)
 {
-    if (head == NULL)
+    if (head == NULL) 
     {
-        head = new StackNode;
-        tail = head;
-        head->data = x;
+        head = new StackNode; 
+        tail = head; 
+        head->data = x; 
     }
     else
     {
-        StackNode * current = head;
-        while (current->next != nullptr)
-        {
-            current = current->next;
-        }
-        current->next = new StackNode;
-        (current->next)->data = x;
-        current = current->next;
-        tail = current;
+        StackNode * current = tail; 
+        current->next = new StackNode; 
+        (current->next)->data = x; 
+        current = current->next; 
+        tail = current; 
     }
 }
 
